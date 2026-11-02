@@ -1,0 +1,5 @@
+{
+  "name": "Filter triage-meldingen",
+  "description": "Maakt de lijst compact en begrenst het aantal per uitvoering.",
+  "fields": {}
+}

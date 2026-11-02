@@ -1,0 +1,5 @@
+{
+  "name": "Select triage message",
+  "description": "Selects the next message from the compact triage list.",
+  "fields": {}
+}

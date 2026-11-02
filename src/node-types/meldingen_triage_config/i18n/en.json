@@ -1,0 +1,13 @@
+{
+  "name": "Message triage configuration",
+  "description": "Builds the time window and OData filter for email triage.",
+  "fields": {
+    "mailbox_id": {"label": "Mailbox ID"},
+    "label_nieuwe_melding": {"label": "New-message label ID"},
+    "handmatige_domeinen": {"label": "Manually handled domains"},
+    "extra_melders": {"label": "Additional known senders"},
+    "dagen_terug": {"label": "Days to look back"},
+    "max_per_run": {"label": "Maximum per run"},
+    "extra_filters": {"label": "Additional OData filter clauses"}
+  }
+}

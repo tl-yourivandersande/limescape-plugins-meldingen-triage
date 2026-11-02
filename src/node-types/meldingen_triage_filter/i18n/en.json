@@ -1,0 +1,5 @@
+{
+  "name": "Filter triage messages",
+  "description": "Compacts and caps the message list for one execution.",
+  "fields": {}
+}

@@ -1,0 +1,75 @@
+$schema: https://schemas.limescape.ai/plugin-sdk/1/node-type.schema.json
+schema_version: 1
+code: meldingen_triage_config
+name: Meldingen triage configuratie
+description: Builds the time window and OData filter for email triage.
+category: prompts
+icon:
+  lucide: settings-2
+availability: general
+stage: stable
+runtime:
+  execution_mode: stream
+  trace: none
+  manages_output_keys: false
+  isolation: shared
+  timeout_seconds: 30
+capabilities: []
+dependencies: []
+io:
+  input_data: {}
+  output_data:
+    mailbox_id: Mailbox identifier
+    label_nieuwe_melding: Label identifier for new messages
+    handmatige_domeinen: Domains handled manually
+    extra_melders: Additional known senders
+    max_per_run: Maximum messages per run
+    top: OData top limit
+    vanaf: UTC start date
+    filter: OData filter expression
+form:
+  fields:
+    - name: mailbox_id
+      type: text
+      label: Mailbox identifier
+      required: 1
+      max_length: 128
+    - name: label_nieuwe_melding
+      type: text
+      label: New-message label identifier
+      required: 0
+      max_length: 128
+    - name: handmatige_domeinen
+      type: textarea
+      label: Manually handled domains
+      required: 0
+      max_length: 4000
+    - name: extra_melders
+      type: textarea
+      label: Additional known senders
+      required: 0
+      max_length: 4000
+    - name: dagen_terug
+      type: integer
+      label: Days to look back
+      required: 1
+      default: 3
+      min: 1
+      max: 365
+    - name: max_per_run
+      type: integer
+      label: Maximum per run
+      required: 1
+      default: 25
+      min: 1
+      max: 100
+    - name: extra_filters
+      type: textarea
+      label: Additional OData filter clauses
+      required: 0
+      max_length: 4000
+  layout:
+    - id: tab-settings
+      sections:
+        - id: section-properties
+          fields: [mailbox_id, label_nieuwe_melding, handmatige_domeinen, extra_melders, dagen_terug, max_per_run, extra_filters]
