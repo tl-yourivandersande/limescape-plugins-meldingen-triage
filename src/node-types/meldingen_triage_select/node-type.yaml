@@ -1,0 +1,29 @@
+$schema: https://schemas.limescape.ai/plugin-sdk/1/node-type.schema.json
+schema_version: 1
+code: meldingen_triage_select
+name: Select triage message
+description: Selects the next message from the compact triage list.
+category: prompts
+icon:
+  lucide: list-checks
+availability: general
+stage: stable
+runtime:
+  execution_mode: stream
+  trace: none
+  manages_output_keys: false
+  isolation: shared
+  timeout_seconds: 30
+capabilities: []
+dependencies: []
+io:
+  input_data:
+    triage_filter: Filtered triage object
+  output_data:
+    index: Current message index
+    next_index: Next message index
+    melding_id: Selected message ID
+    onderwerp: Selected message subject
+form:
+  fields: []
+  layout: []

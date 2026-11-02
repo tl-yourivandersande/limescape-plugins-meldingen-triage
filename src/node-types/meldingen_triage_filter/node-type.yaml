@@ -1,0 +1,28 @@
+$schema: https://schemas.limescape.ai/plugin-sdk/1/node-type.schema.json
+schema_version: 1
+code: meldingen_triage_filter
+name: Filter triage messages
+description: Compact and cap the Tribe message list for one triage run.
+category: prompts
+icon:
+  lucide: list-filter
+availability: general
+stage: stable
+runtime:
+  execution_mode: stream
+  trace: none
+  manages_output_keys: false
+  isolation: shared
+  timeout_seconds: 30
+capabilities: []
+dependencies: []
+io:
+  input_data:
+    triage_configuratie: Triage configuration object
+    triage_meldingen: Tribe message list
+  output_data:
+    meldingen: Compact messages for triage
+    aantal: Number of messages
+form:
+  fields: []
+  layout: []

@@ -1,0 +1,13 @@
+{
+  "name": "Meldingen triage configuratie",
+  "description": "Stelt het tijdvenster en OData-filter voor de e-mailtriage samen.",
+  "fields": {
+    "mailbox_id": {"label": "Mailbox-ID"},
+    "label_nieuwe_melding": {"label": "Label-ID voor nieuwe melding"},
+    "handmatige_domeinen": {"label": "Handmatig behandelde domeinen"},
+    "extra_melders": {"label": "Extra bekende afzenders"},
+    "dagen_terug": {"label": "Dagen terugkijken"},
+    "max_per_run": {"label": "Maximum per uitvoering"},
+    "extra_filters": {"label": "Extra OData-filtervoorwaarden"}
+  }
+}
