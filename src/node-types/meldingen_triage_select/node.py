@@ -20,7 +20,8 @@ async def execute(ctx: NodeContext, inp: NodeInput):
     filtered = inp.input_data.get("triage_filter") or {}
     messages = _as_list(filtered.get("meldingen") if isinstance(filtered, dict) else None)
     index = _previous_count(inp.input_data.get("triage_selecteer_melding"))
-    message = messages[index] if index < len(messages) and isinstance(messages[index], dict) else {}
+    candidate = messages[index] if index < len(messages) else None
+    message: dict[str, object] = candidate if isinstance(candidate, dict) else {}
     yield {
         inp.output_key: {
             "index": index,
