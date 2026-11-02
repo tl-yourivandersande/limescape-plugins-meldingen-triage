@@ -12,9 +12,11 @@ def _lines(value: object) -> list[str]:
 
 
 def _integer(value: object, name: str, low: int, high: int) -> int:
+    if isinstance(value, bool) or not isinstance(value, (int, str)):
+        raise NodeInputError(f"{name} must be an integer")
     try:
         number = int(value)
-    except (TypeError, ValueError) as exc:
+    except ValueError as exc:
         raise NodeInputError(f"{name} must be an integer") from exc
     if not low <= number <= high:
         raise NodeInputError(f"{name} must be between {low} and {high}")
