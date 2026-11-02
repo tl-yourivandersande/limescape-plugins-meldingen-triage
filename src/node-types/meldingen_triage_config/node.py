@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from limescape_plugin_sdk import NodeContext, NodeInput, NodeInputError
 
@@ -31,7 +31,7 @@ async def execute(ctx: NodeContext, inp: NodeInput):
     if not isinstance(label, str):
         raise NodeInputError("New-message label identifier must be text")
 
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     from_date = (now - timedelta(days=days_back)).replace(hour=0, minute=0, second=0, microsecond=0)
     since = from_date.isoformat(timespec="seconds").replace("+00:00", "Z")
     clauses = [

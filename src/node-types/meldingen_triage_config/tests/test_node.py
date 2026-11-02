@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import pytest
 from limescape_plugin_sdk.testing import FakeContext, run_node
 
 NODE_DIR = Path(__file__).resolve().parents[1]

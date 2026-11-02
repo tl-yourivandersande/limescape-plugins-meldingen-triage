@@ -20,7 +20,13 @@ async def test_filters_non_messages_and_preserves_shape():
             {"Subject": "No ID"},
         ],
     )
-    assert result == [{"filtered": {"meldingen": [{"ID": "synthetic-1", "Subject": "Example", "CreationDate": "2026-01-01"}], "aantal": 1}}]
+    expected = {
+        "filtered": {
+            "meldingen": [{"ID": "synthetic-1", "Subject": "Example", "CreationDate": "2026-01-01"}],
+            "aantal": 1,
+        }
+    }
+    assert result == [expected]
 
 
 async def test_accepts_single_message_and_none():
